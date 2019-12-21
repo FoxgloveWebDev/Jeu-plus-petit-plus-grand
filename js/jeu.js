@@ -9,8 +9,11 @@ var tryNumber = 0;
 do {
     //The player is asked to enter a number
     var playerNumber = prompt('Entrer un nombre entier entre 1 et 1000');
-    playerNumber = parseInt(playerNumber);
 
+    //Leaves the game if the player clicks on cancel (=> if playerNumber returns "null")
+    if (playerNumber === null) {
+        break;
+    }
 
     //The player is told if the expected number is lesser or greater
     if(isNaN(playerNumber)) {
@@ -21,7 +24,7 @@ do {
         if (playerNumber < randomNumber) {
             alert("Nope, c'est plus haut que ça");
             } else if (playerNumber > randomNumber) {
-            alert("Nope, c'est plus bas que ça");
+            alert("Nope, c'est plus bas que ça");            
             } else {
             alert("Bravo, vous avez trouvé !");    
             }
